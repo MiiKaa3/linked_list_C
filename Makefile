@@ -1,9 +1,14 @@
-GCC_ARGS = -g -Wall -Werror -Wextra -pedantic -Wno-unused-parameter -Wno-unused-variable
+CC = gcc
+CC_W = -Wall -Werror -Wextra -pedantic -Wno-unused-parameter -Wno-unused-variable
+CC_ARGS = -g $(CC_W)
+APP = ./bin/app
+SRC = ./src
+INC = -I./include
 
 build:
-	gcc $(GCC_ARGS) ./*.c -o ./app
+	$(CC) $(CC_ARGS) $(INC) $(SRC)/*.c -o $(APP)
 
 run:
-	./app
+	$(APP)
 
 br: build run
