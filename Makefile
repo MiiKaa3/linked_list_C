@@ -6,6 +6,7 @@ SRC = ./src
 INC = -I./include
 
 build:
+	mkdir -p ./bin
 	$(CC) $(CC_ARGS) $(INC) $(SRC)/*.c -o $(APP)
 
 run:
